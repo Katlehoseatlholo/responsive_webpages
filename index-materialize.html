@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- Add the Materialize CSS and JS links to your page -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="main-container">
+        <section class="navbar" id="navbar">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Materialize</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#work-experience">WORK-EXPERIENCE</a></li>
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-trigger" href="#contact-me" data-target="dropdown1">Contact Me<i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <!-- /.---->
+        <section class="hero">
+            <div class="valign-wrapper" lc-helper="background"
+                style="background:url('') center / cover no-repeat; background-color:#444; background-blend-mode: overlay; background-size: contain;"
+                id="background-container">
+                <div class="valign center-align text-light col s12 m8 offset-m2">
+                    <div class="lc-block mb-4">
+                        <div editable="rich">
+                            <h1 class="display-1 fw-bold" id="name">{{datafile.user.fullName}}</h1>
+                        </div>
+                    </div>
+
+                    <div class="lc-block" style="position: sticky;">
+                        <div editable="rich">
+                            <p class="lead fw-bold" style="text-align: center;">I'm a Software Developer.</p>
+                        </div>
+                    </div>
+
+                    <div class="lc-block" style="text-align: center;">
+                        <a onclick="if (!document.querySelector('body').classList.contains('livecanvas-is-editing')) this.closest('section').nextElementSibling.scrollIntoView({ behavior: 'smooth' });"
+                            class="waves-effect waves-light btn-floating btn-large teal">
+                            <i class="material-icons">arrow_downward</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                fetch('data.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const backgroundContainer = document.getElementById('background-container');
+                        const nameElement = document.getElementById('name');
+
+                        // Update the background image URL
+                        backgroundContainer.style.backgroundImage = `url('${data.user.photo}')`;
+
+                        // Update the name
+                        nameElement.textContent = data.user.name;
+                    })
+                    .catch(error => console.log(error));
+            </script>
+
+
+        </section>
+
+
+
+        <section class="about-me" id="about-me">
+            <div class="container">
+
+                <div class="container py-4" style="background-color: #b1aaaa;">
+                    <div class="row" style="background-color: #b1aaaa;">
+                        <div class="col s12 m8">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title">About Me</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>I have completed my degree (Bsc IT computer science and informatics) at the
+                                        University of Johannesburg. During these studies, we were taught all core
+                                        Software
+                                        development concepts such as Object Oriented Programming, Database, Web
+                                        development,
+                                        Mobile development, design patterns and SQL just to name a few . I would like to
+                                        work for Accenture,im interested in any software development positions for
+                                        graduates. I
+                                        am also interested in furthering my studies to honours degree, any financial
+                                        assistance will be greatly appreciated.
+                                    <p>I would like to describe myself as a hard working individual , who is passionate
+                                        about Technology, i love programming because it allows me to be creative and
+                                        design
+                                        cool apps and websites. I'm a fast learner who is always willing to learn from
+                                        anyone valuable.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="https://cdn.livecanvas.com/media/svg/manypixels/looking_for_idea_with_team.svg"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr>
+
+                <div class="row">
+                    <div class="col col-md-12">
+                        <div class="col s12 py-4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <img alt="" class="circle responsive-img" src="hero.jpg" style="width:10vh;"
+                                        loading="lazy">
+                                    <span class="card-title"><strong>{{datafile.user.fullName}}</strong></span>
+                                    <p class="grey-text text-darken-1">BSc Information Technology (Computer Science and
+                                        Informatics)</p>
+                                    <blockquote>
+                                        <p class="grey-text">"You are the <span>Placebo</span>."</p>
+                                    </blockquote>
+                                </div>
+                                <div class="card-action">
+                                    <a class="black-text" href="#">
+                                        <i class="material-icons">facebook</i>
+                                    </a>
+                                    <a class="black-text" href="#">
+                                        <i class="material-icons">twitter</i>
+                                    </a>
+                                    <a class="black-text" href="#">
+                                        <i class="material-icons">instagram</i>
+                                    </a>
+                                    <a class="black-text" href="#">
+                                        <i class="material-icons">linkedin</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col col-md-6" style="background-color: rgb(150, 235, 111); padding: 20px; margin-top: auto; margin-bottom: auto;">
+                        <h2 class="col col-md-12" style="color: white; text-align: center;">
+                          <div editable="rich">
+                            <h3 style="color: black;"><strong>SKILLS</strong></h3>
+                          </div>
+                        </h2>
+                        <hr style="background-color: white; margin-top: 10px; margin-bottom: 20px;">
+                        <div class="progress">
+                          <h5><strong>JAVASCRIPT</strong></h5>
+                          <div class="determinate" style="width: 88%; background-color: rgb(34, 138, 138); color: rgb(19, 18, 18);"></div>
+                        </div>
+                        <div class="progress">
+                          <h5><strong>JAVA</strong></h5>
+                          <div class="determinate" style="width: 90%; background-color: rgb(34, 138, 138); color: rgb(14, 13, 13);"></div>
+                        </div>
+                        <div class="progress">
+                          <h5><strong>REACT/REACT-NATIVE</strong></h5>
+                          <div class="determinate" style="width: 87%; background-color: rgb(34, 138, 138); color: rgb(17, 17, 17);"></div>
+                        </div>
+                        <div class="progress">
+                          <h5><strong>MACHINE LEARNING</strong></h5>
+                          <div class="determinate" style="width: 70%; background-color: rgb(34, 138, 138); color: rgb(5, 5, 5);"></div>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+        <hr />
+        <section id="services" class="services">
+            <div class="container" style="background-color: #b1aaaa;">
+                <div class="row">
+                    <div class="col s12 text-center">
+                        <div class="lc-block">
+
+                            <h2 editable="inline" class="display-2 mb-0"><b>SERVICES</b></h2>
+                        </div><!-- /lc-block -->
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col s12 m4">
+                        <div class="p-lg-5 p-4 shadow">
+                            <div class="lc-block mb-4">
+                                <img alt="" class="responsive-img"
+                                    src="https://cdn.livecanvas.com/media/svg/undraw/product-teardown.svg"
+                                    style="height:10vh">
+                                <h4 class="my-3" editable="inline">App Developer</h4>
+                                <p editable="inline">As an app developer, {{datafile.user.fullName}} channels boundless
+                                    innovation into
+                                    transforming your ideas into tangible, interactive experiences. Whether it's a sleek
+                                    mobile app that simplifies your daily routine or a groundbreaking augmented reality
+                                    masterpiece, Alex's proficiency in multiple programming languages ensures that your
+                                    app
+                                    stands at the forefront of technological advancement.&nbsp;</p>
+                            </div><!-- /lc-block -->
+                        </div>
+                    </div><!-- /col -->
+                    <div class="col s12 m4">
+                        <div class="p-lg-5 p-4 shadow">
+                            <div class="lc-block mb-4">
+                                <img alt="" class="responsive-img"
+                                    src="https://cdn.livecanvas.com/media/svg/undraw/selfie.svg" style="height:10vh">
+                                <h4 class="my-3" editable="inline">Website Developer</h4>
+                                <p editable="inline">As a web developer, {{datafile.user.fullName}} harnesses the raw
+                                    power
+                                    of imagination and
+                                    creativity, weaving lines of code into a mesmerizing digital tapestry. Alex crafts
+                                    websites that transcend the ordinary, fusing sleek designs, intuitive navigation,
+                                    and
+                                    cutting-edge functionalities. Every pixel and every interaction is meticulously
+                                    orchestrated to captivate visitors and leave them craving more.&nbsp;</p>
+                                &nbsp;</p>
+                            </div><!-- /lc-block -->
+                        </div>
+                    </div><!-- /col -->
+                    <div class="col s12 m4">
+                        <div class="p-lg-5 p-4 shadow">
+                            <div class="lc-block mb-4">
+                                <img alt="" class="responsive-img"
+                                    src="https://cdn.livecanvas.com/media/svg/undraw/add-files.svg" style="height:10vh">
+                                <h4 class="my-3" editable="inline">Tutor</h4>
+                                <p editable="inline">As a tutor, {{datafile.user.fullName}} embodies the epitome of
+                                    patience and expertise. With
+                                    an uncanny ability to distill complex concepts into easily digestible bites, Alex
+                                    guides
+                                    and empowers learners of all levels. With a calming demeanor and a knack for
+                                    demystifying the intricacies of coding, Alex transforms even the most daunting
+                                    challenges into exciting opportunities for growth.&nbsp;</p>
+                                us est.&nbsp;</p>
+                            </div><!-- /lc-block -->
+                        </div>
+                    </div><!-- /col -->
+                </div>
+
+            </div>
+        </section>
+        <hr />
+        <h2 editable="inline" class="display-2 mb-0"><b>WORK-EXPERIENCE</b></h2>
+        <section id="work-experience" class="work-experience">
+            <div class="container py-7">
+                <div class="row rounded text-center py-4 g-4 bg-light">
+                    <div class="col s12 m6 l3">
+                        <div class="d-flex justify-content-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" width="3em" height="3em" viewBox="0 0 24 24" class="lc-helper svg-icon"
+                                fill="currentColor">
+                                <path
+                                    d="M13,17V19H14A1,1 0 0,1 15,20H22V22H15A1,1 0 0,1 14,23H10A1,1 0 0,1 9,22H2V20H9A1,1 0 0,1 10,19H11V17H5V15.5C5,13.57 8.13,12 12,12C15.87,12 19,13.57 19,15.5V17H13M12,3A3.5,3.5 0 0,1 15.5,6.5A3.5,3.5 0 0,1 12,10A3.5,3.5 0 0,1 8.5,6.5A3.5,3.5 0 0,1 12,3Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="66"
+                            data-time="1000" data-delay="60" data-format="{}">125</span>
+                        <p class="lead">Projects Done</p>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="d-flex justify-content-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" width="3em" height="3em" viewBox="0 0 24 24" class="lc-helper svg-icon"
+                                fill="currentColor">
+                                <path
+                                    d="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="53"
+                            data-time="1000" data-delay="60" data-format="{}">53</span>
+                        <p class="lead">Customers Satisfied</p>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="d-flex justify-content-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" width="3em" height="3em" viewBox="0 0 24 24" class="lc-helper svg-icon"
+                                fill="currentColor">
+                                <path
+                                    d="M13,17V19H14A1,1 0 0,1 15,20H22V22H15A1,1 0 0,1 14,23H10A1,1 0 0,1 9,22H2V20H9A1,1 0 0,1 10,19H11V17H5V15.5C5,13.57 8.13,12 12,12C15.87,12 19,13.57 19,15.5V17H13M12,3A3.5,3.5 0 0,1 15.5,6.5A3.5,3.5 0 0,1 12,10A3.5,3.5 0 0,1 8.5,6.5A3.5,3.5 0 0,1 12,3Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="250"
+                            data-time="1000" data-delay="60" data-format="{}">250</span>
+                        <p class="lead">Consulatations Done</p>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="d-flex justify-content-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" width="3em" height="3em" viewBox="0 0 24 24" class="lc-helper svg-icon"
+                                fill="currentColor">
+                                <path
+                                    d="M5,3V21H11V17.5H13V21H19V3H5M7,5H9V7H7V5M11,5H13V7H11V5M15,5H17V7H15V5M7,9H9V11H7V9M11,9H13V11H11V9M15,9H17V11H15V9M7,13H9V15H7V13M11,13H13V15H11V13M15,13H17V15H15V13M7,17H9V19H7V17M15,17H17V19H15V17Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="15"
+                            data-time="1000" data-delay="0" data-format="{}">15</span>
+                        <p class="lead">Offices In Gauteng</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <section class="contact-me" style="background-color: orange;">
+                <section class="bg-light" id="Contact" style="background-color: #091f50;">
+                    <div class="container py-5" style="background-color: rgb(76, 102, 126);">
+                        <div class="p-5 lc-block" style="background-color: #b1aaaa;">
+                            <div class="lc-block">
+                                <div editable="rich">
+                                    <h2 class="fw-bolder display-3">Get in touch.</h2>
+                                </div>
+                            </div>
+                            <div class="lc-block col s12 m8">
+                                <div editable="rich">
+                                    <p class="lead">Send me a quick message and I will definately respond ASAP.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 lc-block shadow rounded col s12 xl10 offset-xl1">
+                            <form>
+                                <div class="input-field mb-4">
+                                    <input name="mouseglue" type="text" class="validate" placeholder="John Doe" value=""
+                                        autocomplete="off" hidden="">
+                                    <input name="name" type="text" class="validate" placeholder="John Doe" value="">
+                                    <label for="name">Your Name (optional)</label>
+                                </div>
+                                <div class="input-field mb-4">
+                                    <input name="email" type="email" class="validate" placeholder="name@example.com"
+                                        value="">
+                                    <label for="email">Your Email Address</label>
+                                </div>
+                                <div class="input-field mb-4">
+                                    <input name="subject" type="text" class="validate" placeholder="Contact Subject">
+                                    <label for="subject">Subject (optional)</label>
+                                </div>
+                                <div class="input-field mb-4">
+                                    <textarea name="message" class="materialize-textarea" rows="3"
+                                        maxlength="300"></textarea>
+                                    <label for="message">Your Message</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large">Submit Form</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+        </section>
+        <section class="which-city">
+            <section class="py-6">
+                <div class="container-fluid" style="max-width:1920px">
+                    <div class="row valign-wrapper">
+                        <div class="col s12 m6">
+                            <div class="lc-block">
+                                <img class="responsive-img" src={{datafile.city.photo}} alt="Cape Town">
+                            </div><!-- /lc-block -->
+                        </div><!-- /col -->
+                        <div class="col s12 m6">
+                            <div class="lc-block mb-4">
+                                <div editable="rich">
+                                    <h1 class="fw-bold display-2">{{datafile.city.name}}</h1>
+                                </div>
+                            </div><!-- /lc-block -->
+                            <div class="lc-block mb-5">
+                                <div editable="rich">
+                                    <p class=""> {{datafile.city.description}}</p>
+                                    <p class="">{{datafile.city.reason}}<br></p>
+                                    <p class="">{{datafile.city.reason2}}<br></p>
+                                    <p class="">{{datafile.city.outdoor}}<br></p>
+                                    <p class="">{{datafile.city.history}}<br></p>
+                                </div>
+                            </div><!-- /lc-block -->
+                            <!-- /lc-block -->
+                            <div class="lc-block">
+                                <i class="material-icons text-muted" style="font-size: 6em;">format_quote</i>
+                            </div><!-- /lc-block -->
+                            <div class="lc-block">
+                                <figure>
+                                    <blockquote class="blockquote">
+                                        <p editable="inline" class="text-muted">Education is the most powerful weapon
+                                            which
+                                            you can use to change the world."</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer">
+                                        <span editable="inline" class="">NELSON MANDELA</span> <cite editable="inline"
+                                            title="Source Title" class=""> </cite>
+                                    </figcaption>
+                                </figure>
+                            </div><!-- /lc-block -->
+                        </div><!-- /col -->
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="foreign">
+            <div class="container mt-3">
+                <h2 class="center-align" style="background-color: #444;">Favorite Subjects</h2>
+                <p class="center-align" style="background-color: #f3e9e9;">The list of official languages I speak:</p>
+                <table class="striped" style="background-color: rgb(155, 101, 31);">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each datafile.favouriteSubjects}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{description}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+
+
+                </table>
+            </div>
+        </section>
+
+        <section class="favouriteSubjects" id="favourite">
+
+            <h2 class="favouriteLanguages" style="text-align: center;"><b><i>Favourite Languages</i></b></h2>
+
+            <div class="container-fluid">
+                <div class="row">
+                    {{#each datafile.foreignLanguage.phrases}}
+                    <div class="col s12 m4">
+                        <div class="card-panel">
+                            <div class="card-content">
+                                <span
+                                    class="card-title activator grey-text text-darken-4">{{../foreignLanguage.language}}<i
+                                        class="material-icons right">more_vert</i></span>
+                                <p class="card-content">
+                                    <strong>English:</strong> {{englishPhrase}}<br>
+                                    <strong>Foreign Language:</strong> {{foreignLanguage}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <hr />
+
+        </section>
+        <section class="testimonials">
+            <h2 class="testimonials" style="text-align: center;"><b><i>Testimonials</i></b></h2>
+            <div class="container py-6">
+                <div class="row row-cols-1 g-4 row-cols-lg-3">
+                    <div class="col">
+                        <!-- First column content -->
+
+                        <div class="lc-block d-flex gap-1 py-3"> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon"
+                                class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="lc-block mb-4">
+                            <div editable="rich">
+                                <blockquote class="blockquote">"I cannot speak highly enough of
+                                    {{datafile.user.fullName}}'s coding abilities. Their work ethic, technical
+                                    proficiency,
+                                    and commitment to delivering results exceeded our expectations. They consistently
+                                    met
+                                    deadlines and showed exceptional attention to detail. {{datafile.user.fullName}} is
+                                    an
+                                    exceptional coder who brings a level of expertise and professionalism that is truly
+                                    commendable." - David M.</blockquote>
+
+                            </div>
+                        </div>
+                        <div class="lc-block">
+                            <img class="img-fluid"
+                                src="https://cdn.livecanvas.com/media/logos/ipsum/logoipsum-logo-1.svg" width="128"
+                                height="128" alt="Company logo">
+                        </div><!-- /lc-block -->
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Second column content -->
+                    <div class="col">
+                        <div class="lc-block d-flex gap-1 py-3"> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon"
+                                class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="lc-block mb-4">
+                            <div editable="rich">
+                                <blockquote class="blockquote">"I was blown away by {{datafile.user.fullName}}'s coding
+                                    expertise. They
+                                    effortlessly tackled complex challenges and found innovative solutions. Their
+                                    ability to
+                                    understand our requirements and translate them into efficient code was impressive.
+                                    {{datafile.user.fullName}} is a highly skilled and dedicated coder who I would
+                                    gladly
+                                    work with
+                                    again." - Sarah L.
+                                </blockquote>
+
+                            </div>
+                        </div>
+                        <div class="lc-block">
+                            <img class="img-fluid"
+                                src="https://cdn.livecanvas.com/media/logos/ipsum/logoipsum-logo-3.svg" width="128"
+                                height="128" alt="Company logo">
+                        </div><!-- /lc-block -->
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Third column content -->
+                    <div class="col">
+                        <div class="lc-block d-flex gap-1 py-3"> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon"
+                                class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" lc-helper="svg-icon" class="text-warning">
+                                <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="lc-block mb-4">
+                            <div editable="rich">
+                                <blockquote class="blockquote">"Working with {{datafile.user.fullName}} was an absolute
+                                    pleasure. Their
+                                    coding skills are exceptional, and they consistently delivered high-quality work.
+                                    Their
+                                    attention to detail, problem-solving abilities, and clean code made our project a
+                                    success. I highly recommend {{datafile.user.fullName}} for anyone in need of a
+                                    talented
+                                    and reliable
+                                    coder." - John D</blockquote>
+
+                            </div>
+                        </div>
+                        <div class="lc-block">
+                            <img class="img-fluid"
+                                src="https://cdn.livecanvas.com/media/logos/ipsum/logoipsum-logo-8.svg" width="128"
+                                height="128">
+                        </div><!-- /lc-block -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    </section>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Initialize Materialize components -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.AutoInit();
+        });
+    </script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
