@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{background-color: darkgrey;}
+        body{background-color:paleturquoise}
+        .list{background-color: sandybrown;}
+        .fruits-array{margin-top: auto;background-color: orange;}
+    </style>
+</head>
+
+<body>
+    <h1 class="title" >Dear {{title}} Katleho Seatlholo</h1>
+    <hr />
+    <section>
+    <p class="fruits-array"><b>Todays fruits at JBS :</b>{{fruits}}</p>
+    <hr /><p class="client-status"><b>Client-Status:</b> {{isClient}}</p>
+    </section><section><span   ><b><p class="last-week-sales">Last Weeks sales: </p></b></span>
+    <hr />{{#each fruitSales}}
+    <ol class="list">
+        <li>Day : {{day}}</li>
+        <li>Apples Sold : {{apples}}</li>
+        <li>Oranges Sold : {{oranges}}</li>
+    </ol>
+    {{/each}}
+    <hr /></section>
+</body>
+
+</html>

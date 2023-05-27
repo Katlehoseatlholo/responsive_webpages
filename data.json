@@ -1,0 +1,56 @@
+{
+    "user" : {
+        "fullName": "Katleho Seatlholo",
+        "photo" : "grad.jpg"
+    },
+    "city" : {
+        "name" : "Cape Town",
+        "photo" : "cape.jpg",
+        "description" : "Cape Town, the jewel of South Africa's Western Cape, captivates the hearts of locals and visitors alike with its undeniable allure. Here are some reasons why people are enamored with this vibrant city.",
+        "reason" : "Breathtaking Natural Beauty: Nestled between the majestic Table Mountain and the glistening Atlantic Ocean, Cape Town boasts an awe-inspiring natural setting. The iconic Table Mountain provides a stunning backdrop, and the city's pristine beaches, such as Clifton and Camps Bay, offer picturesque sunsets and a paradise for outdoor enthusiasts.",
+        "reason2":"Diversity and Multiculturalism: Cape Town is a melting pot of cultures and ethnicities, embracing diversity in its truest form. From the vibrant neighborhoods of Bo-Kaap with its colorful houses to the historical significance of District Six, the city celebrates its multicultural heritage, fostering a sense of unity and acceptance.",
+        "history":"Rich History and Culture: Cape Town's history dates back centuries, and the city proudly showcases its heritage through its museums, historical landmarks, and architecture. Robben Island, the former prison that held Nelson Mandela, is a powerful symbol of South Africa's struggle against apartheid. Additionally, the city's vibrant art scene, live music venues, and theater productions contribute to its cultural tapestry.",
+        "outdoor":"Outdoor Adventure: Adventure seekers flock to Cape Town for its thrilling outdoor activities. From hiking up Table Mountain to paragliding off its slopes, the city offers an adrenaline rush like no other.style that caters to all tastes. From trendy cafes and bustling markets to upscale shopping malls and lively nightlife, the city offers a diverse range of experiences. The bustling V&A Waterfront, Long Street's eclectic mix of bars and clubs, and the creative hubs of Woodstock and Bree Street are just some of the destinations that make Cape Town come alive after dark."
+    },
+    "foreignLanguage" : {
+        "language" : "Sotho",
+        "phrases" : [{
+            "englishPhrase" : " You are beautiful",
+            "foreignLanguage" : "O'Motle"
+        },
+        {
+            "englishPhrase" : "Goodbye",
+            "foreignLanguage" : "Salang hantle"
+        },
+        {
+            "englishPhrase" : "Good Morning",
+            "foreignLanguage" : "Dumelang"
+        },
+        {
+            "englishPhrase" : "How are you?",
+            "foreignLanguage" : "Ho Jwang?"
+        },
+        {
+            "englishPhrase" : "I love you",
+            "foreignLanguage" : "Keya ho'rata"
+        },
+        {
+            "englishPhrase" : "God is good",
+            "foreignLanguage" : "Modimo O'motle"
+        }]
+    },
+    "favouriteSubjects" : [
+        {
+            "name" : "Computer Science",
+            "description" : "Study of algorithms and data structures"
+        },
+        {
+            "name" : "Mathematics",
+            "description" : "Linear algebra and Binary "
+        },
+        {
+            "name" : "Information Engineering",
+            "description" : "Study of creating business ICT systems"
+        }
+    ]
+}
