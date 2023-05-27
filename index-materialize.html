@@ -19,10 +19,10 @@
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo">Materialize-Personal-Website</a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="sass.html">About Me</a></li>
-                        <li><a href="badges.html">WORK-EXPERIENCE</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#work-experience">WORK-EXPERIENCE</a></li>
                         <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Contact Me<i
+                        <li><a class="dropdown-trigger" href="#contact-me" data-target="dropdown1">Contact Me<i
                                     class="material-icons right">arrow_drop_down</i></a></li>
                     </ul>
                 </div>
@@ -31,45 +31,45 @@
         <!-- /.---->
         <section class="hero">
             <div class="valign-wrapper " lc-helper="background"
-    style="background:url('') center / cover no-repeat; background-color:#444; background-blend-mode: overlay; background-size: contain;"
-    id="background-container">
-    <div class="valign center-align text-light col s12 m8 offset-m2">
-        <div class="lc-block mb-4">
-            <div editable="rich">
-                <h1 class="display-2 fw-bold" id="name">Katleho Seatlholo</h1>
+                style="background:url('') center / cover no-repeat; background-color:#444; background-blend-mode: overlay; background-size: contain;"
+                id="background-container">
+                <div class="valign center-align text-light col s12 m8 offset-m2">
+                    <div class="lc-block mb-4">
+                        <div editable="rich">
+                            <h1 class="display-2 fw-bold" id="name">{{datafile.user.fullName}}</h1>
+                        </div>
+                    </div>
+
+                    <div class="lc-block">
+                        <div editable="rich">
+                            <p class="lead" style="text-align: center;">I'm a Software Developer.</p>
+                        </div>
+                    </div>
+
+                    <div class="lc-block" style="text-align: center;">
+                        <a onclick="if (!document.querySelector('body').classList.contains('livecanvas-is-editing')) this.closest('section').nextElementSibling.scrollIntoView({ behavior: 'smooth' });"
+                            class="waves-effect waves-light btn-floating btn-large teal">
+                            <i class="material-icons">arrow_downward</i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="lc-block">
-            <div editable="rich">
-                <p class="lead" style="text-align: center;">I'm a Software Developer.</p>
-            </div>
-        </div>
+            <script>
+                fetch('data.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const backgroundContainer = document.getElementById('background-container');
+                        const nameElement = document.getElementById('name');
 
-        <div class="lc-block" style="text-align: center;">
-            <a onclick="if (!document.querySelector('body').classList.contains('livecanvas-is-editing')) this.closest('section').nextElementSibling.scrollIntoView({ behavior: 'smooth' });"
-                class="waves-effect waves-light btn-floating btn-large teal">
-                <i class="material-icons">arrow_downward</i>
-            </a>
-        </div>
-    </div>
-</div>
+                        // Update the background image URL
+                        backgroundContainer.style.backgroundImage = `url('${data.user.photo}')`;
 
-<script>
-  fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-      const backgroundContainer = document.getElementById('background-container');
-      const nameElement = document.getElementById('name');
-
-      // Update the background image URL
-      backgroundContainer.style.backgroundImage = `url('${data.user.photo}')`;
-
-      // Update the name
-      nameElement.textContent = data.user.name;
-    })
-    .catch(error => console.log(error));
-</script>
+                        // Update the name
+                        nameElement.textContent = data.user.name;
+                    })
+                    .catch(error => console.log(error));
+            </script>
 
         </section>
 
@@ -86,19 +86,25 @@
                                     <span class="card-title">About Me</span>
                                 </div>
                                 <div class="card-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula
-                                        malesuada placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque
-                                        scelerisque auctor. Ut porta lacus eget nisi fermentum lobortis. Vestibulum
-                                        facilisis tempor ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat
-                                        eget libero accumsan iaculis.</p>
-                                    <p>Nunc et metus id ligula malesuada placerat sit amet quis enim. Aliquam erat
-                                        volutpat. In pellentesque scelerisque auctor.Nunc et metus id ligula malesuada
-                                        placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque scelerisque
-                                        auctor.</p>
+                                    <p>I have completed my degree (Bsc IT computer science and informatics) at the
+                                        University of Johannesburg. During these studies, we were taught all core
+                                        Software
+                                        development concepts such as Object Oriented Programming, Database, Web
+                                        development,
+                                        Mobile development, design patterns and SQL just to name a few . I would like to
+                                        work for Accenture,im interested in any software development positions for
+                                        graduates. I
+                                        am also interested in furthering my studies to honours degree, any financial
+                                        assistance will be greatly appreciated.
+                                    <p>I would like to describe myself as a hard working individual , who is passionate
+                                        about Technology, i love programming because it allows me to be creative and
+                                        design
+                                        cool apps and websites. I'm a fast learner who is always willing to learn from
+                                        anyone valuable.</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col s12 m4">
                             <div class="card">
                                 <div class="card-image">
@@ -120,7 +126,7 @@
                                 <div class="card-content">
                                     <img alt="" class="circle responsive-img" src="hero.jpg" style="width:10vh;"
                                         loading="lazy">
-                                    <span class="card-title"><strong>Katleho Seatlholo</strong></span>
+                                    <span class="card-title"><strong>{{datafile.user.fullName}}</strong></span>
                                     <p class="grey-text text-darken-1">BSc Information Technology (Computer Science and
                                         Informatics)</p>
                                     <blockquote>
@@ -159,7 +165,7 @@
                             <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0"
                                 aria-valuemax="100"
                                 style="width: 88%; background-color: rgb(34, 138, 138); color: rgb(19, 18, 18);">
-                                
+
                             </div>
                         </div>
                         <div class="progress ">
@@ -167,7 +173,7 @@
                             <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
                                 aria-valuemax="100"
                                 style="width: 90%; background-color: rgb(34, 138, 138); color: rgb(14, 13, 13);">
-                                
+
                             </div>
                         </div>
                         <div class="progress">
@@ -175,15 +181,15 @@
                             <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0"
                                 aria-valuemax="100"
                                 style="width: 87%; background-color: rgb(34, 138, 138); color: rgb(17, 17, 17);">
-                                
+
                             </div>
                         </div>
                         <div class="progress">
-                            <h5>  <strong>MACHINE LEARNING 70%</strong></h5>
+                            <h5> <strong>MACHINE LEARNING 70%</strong></h5>
                             <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
                                 aria-valuemax="100"
                                 style="width: 70%; background-color: rgb(34, 138, 138); color: rgb(5, 5, 5);">
-                              
+
                             </div>
                         </div>
                     </div>
@@ -211,9 +217,14 @@
                                 <img alt="" class="responsive-img"
                                     src="https://cdn.livecanvas.com/media/svg/undraw/product-teardown.svg"
                                     style="height:10vh">
-                                <h4 class="my-3" editable="inline"></h4>
-                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Suspendisse a lacus est.&nbsp;</p>
+                                <h4 class="my-3" editable="inline">App Developer</h4>
+                                <p editable="inline">As an app developer, {{datafile.user.fullName}} channels boundless
+                                    innovation into
+                                    transforming your ideas into tangible, interactive experiences. Whether it's a sleek
+                                    mobile app that simplifies your daily routine or a groundbreaking augmented reality
+                                    masterpiece, Alex's proficiency in multiple programming languages ensures that your
+                                    app
+                                    stands at the forefront of technological advancement.&nbsp;</p>
                             </div><!-- /lc-block -->
                         </div>
                     </div><!-- /col -->
@@ -222,9 +233,16 @@
                             <div class="lc-block mb-4">
                                 <img alt="" class="responsive-img"
                                     src="https://cdn.livecanvas.com/media/svg/undraw/selfie.svg" style="height:10vh">
-                                <h4 class="my-3" editable="inline"></h4>
-                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Suspendisse a lacus est.&nbsp;</p>
+                                <h4 class="my-3" editable="inline">Website Developer</h4>
+                                <p editable="inline">As a web developer, {{datafile.user.fullName}} harnesses the raw
+                                    power
+                                    of imagination and
+                                    creativity, weaving lines of code into a mesmerizing digital tapestry. Alex crafts
+                                    websites that transcend the ordinary, fusing sleek designs, intuitive navigation,
+                                    and
+                                    cutting-edge functionalities. Every pixel and every interaction is meticulously
+                                    orchestrated to captivate visitors and leave them craving more.&nbsp;</p>
+                                &nbsp;</p>
                             </div><!-- /lc-block -->
                         </div>
                     </div><!-- /col -->
@@ -233,48 +251,20 @@
                             <div class="lc-block mb-4">
                                 <img alt="" class="responsive-img"
                                     src="https://cdn.livecanvas.com/media/svg/undraw/add-files.svg" style="height:10vh">
-                                <h4 class="my-3" editable="inline"></h4>
-                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Suspendisse a lacus est.&nbsp;</p>
+                                <h4 class="my-3" editable="inline">Tutor</h4>
+                                <p editable="inline">As a tutor, {{datafile.user.fullName}} embodies the epitome of
+                                    patience and expertise. With
+                                    an uncanny ability to distill complex concepts into easily digestible bites, Alex
+                                    guides
+                                    and empowers learners of all levels. With a calming demeanor and a knack for
+                                    demystifying the intricacies of coding, Alex transforms even the most daunting
+                                    challenges into exciting opportunities for growth.&nbsp;</p>
+                                us est.&nbsp;</p>
                             </div><!-- /lc-block -->
                         </div>
                     </div><!-- /col -->
                 </div>
-                <div class="row mt-4">
-                    <div class="col s12 m4">
-                        <div class="p-lg-5 p-4 shadow">
-                            <div class="lc-block mb-4">
-                                <img alt="" class="responsive-img"
-                                    src="https://cdn.livecanvas.com/media/svg/undraw/delivery.svg" style="height:10vh">
-                                <h4 class="my-3" editable="inline"></h4>
-                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Suspendisse a lacus est.&nbsp;</p>
-                            </div><!-- /lc-block -->
-                        </div>
-                    </div><!-- /col -->
-                    <div class="col s12 m4">
-                        <div class="p-lg-5 p-4 shadow">
-                            <div class="lc-block mb-4">
-                                <img alt="" class="responsive-img"
-                                    src="https://cdn.livecanvas.com/media/svg/undraw/no-data.svg" style="height:10vh">
-                                <h4 class="my-3" editable="inline"></h4>
-                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Suspendisse a lacus est.&nbsp;</p>
-                            </div><!-- /lc-block -->
-                        </div>
-                    </div><!-- /col -->
-                    <div class="col s12 m4">
-                        <div class="p-lg-5 p-4 shadow">
-                            <div class="lc-block mb-4">
-                                <img alt="" class="responsive-img"
-                                    src="https://cdn.livecanvas.com/media/svg/undraw/select.svg" style="height:10vh">
-                                <h4 class="my-3" editable="inline"></h4>
-                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Suspendisse a lacus est.&nbsp;</p>
-                            </div><!-- /lc-block -->
-                        </div>
-                    </div><!-- /col -->
-                </div>
+
             </div>
         </section>
         <hr />
@@ -292,7 +282,7 @@
                                 </path>
                             </svg>
                         </div>
-                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="125"
+                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="66"
                             data-time="1000" data-delay="60" data-format="{}">125</span>
                         <p class="lead">Projects Done</p>
                     </div>
@@ -322,7 +312,7 @@
                         </div>
                         <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="250"
                             data-time="1000" data-delay="60" data-format="{}">250</span>
-                        <p class="lead">Employees in the World</p>
+                        <p class="lead">Consulatations Done</p>
                     </div>
                     <div class="col s12 m6 l3">
                         <div class="d-flex justify-content-center mb-2">
@@ -334,9 +324,9 @@
                                 </path>
                             </svg>
                         </div>
-                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="4800"
-                            data-end-at="5000" data-time="1000" data-delay="0" data-format="{}">5000</span>
-                        <p class="lead">Branches In EU</p>
+                        <span class="fw-bold display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="15"
+                            data-time="1000" data-delay="0" data-format="{}">5000</span>
+                        <p class="lead">Offices In Gauteng</p>
                     </div>
                 </div>
             </div>
@@ -353,8 +343,7 @@
                             </div>
                             <div class="lc-block col s12 m8">
                                 <div editable="rich">
-                                    <p class="lead">Duis non neque vel purus porttitor eleifend sit amet placerat quam.
-                                        Etiam rhoncus libero vitae enim ullamcorper.</p>
+                                    <p class="lead">Send me a quick message and I will definately respond ASAP.
                                 </div>
                             </div>
                         </div>
@@ -394,40 +383,38 @@
                     <div class="row valign-wrapper">
                         <div class="col s12 m6">
                             <div class="lc-block">
-                                <img class="responsive-img" src="cape.jpg" alt="Cape Town">
+                                <img class="responsive-img" src={{datafile.city.photo}} alt="Cape Town">
                             </div><!-- /lc-block -->
                         </div><!-- /col -->
                         <div class="col s12 m6">
                             <div class="lc-block mb-4">
                                 <div editable="rich">
-                                    <h1 class="fw-bold display-2">Cape Town</h1>
+                                    <h1 class="fw-bold display-2">{{datafile.city.name}}</h1>
                                 </div>
                             </div><!-- /lc-block -->
                             <div class="lc-block mb-5">
                                 <div editable="rich">
-                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus
-                                        id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In
-                                        pellentesque scelerisque auctor. Ut porta lacus eget nisi fermentum lobortis.
-                                    </p>
-                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus
-                                        id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In
-                                        pellentesque scelerisque auctor. Ut porta lacus eget nisi fermentum lobortis.
-                                        Vestibulum facilisis tempor ipsum, ut rhoncus magna ultricies laoreet. Proin
-                                        vehicula erat eget libero accumsan iaculis.</p>
+                                    <p class=""> {{datafile.city.description}}</p>
+                                    <p class="">{{datafile.city.reason}}<br></p>
+                                    <p class="">{{datafile.city.reason2}}<br></p>
+                                    <p class="">{{datafile.city.outdoor}}<br></p>
+                                    <p class="">{{datafile.city.history}}<br></p>
                                 </div>
                             </div><!-- /lc-block -->
+                            <!-- /lc-block -->
                             <div class="lc-block">
                                 <i class="material-icons text-muted" style="font-size: 6em;">format_quote</i>
                             </div><!-- /lc-block -->
                             <div class="lc-block">
                                 <figure>
                                     <blockquote class="blockquote">
-                                        <p editable="inline" class="text-muted">"A well-known quote, contained in a
-                                            blockquote element."</p>
+                                        <p editable="inline" class="text-muted">Education is the most powerful weapon
+                                            which
+                                            you can use to change the world."</p>
                                     </blockquote>
                                     <figcaption class="blockquote-footer">
-                                        <span editable="inline" class="">Someone famous in</span> <cite
-                                            editable="inline" title="Source Title" class="">Source Title</cite>
+                                        <span editable="inline" class="">NELSON MANDELA</span> <cite editable="inline"
+                                            title="Source Title" class=""> </cite>
                                     </figcaption>
                                 </figure>
                             </div><!-- /lc-block -->
@@ -441,27 +428,52 @@
                 <h2 class="center-align" style="background-color: #444;">Favorite Subjects</h2>
                 <p class="center-align" style="background-color: #f3e9e9;">The list of official languages I speak:</p>
                 <table class="striped" style="background-color: rgb(155, 101, 31);">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
                     <tbody>
+                        {{#each datafile.favouriteSubjects}}
                         <tr>
-                            <td>ENGLISH</td>
-                            <td>SOTHO</td>
-                            <td>SE-TSWANA</td>
+                            <td>{{name}}</td>
+                            <td>{{description}}</td>
                         </tr>
-                        <tr>
-                            <td>ZULU</td>
-                            <td>AFRIKAANS</td>
-                            <td>JAVASCRIPT</td>
-                        </tr>
-                        <tr>
-                            <td>JAVA</td>
-                            <td>REACT/REACT-NATIVE</td>
-                            <td>SQL</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
+
+
                 </table>
             </div>
         </section>
 
+        <section class="favouriteSubjects" id="favourite">
+
+            <h2 class="favouriteLanguages" style="text-align: center;"><b><i>Favourite Languages</i></b></h2>
+
+            <div class="container-fluid">
+                <div class="row">
+                    {{#each datafile.foreignLanguage.phrases}}
+                    <div class="col s12 m4">
+                        <div class="card-panel">
+                            <div class="card-content">
+                                <span
+                                    class="card-title activator grey-text text-darken-4">{{../foreignLanguage.language}}<i
+                                        class="material-icons right">more_vert</i></span>
+                                <p class="card-content">
+                                    <strong>English:</strong> {{englishPhrase}}<br>
+                                    <strong>Foreign Language:</strong> {{foreignLanguage}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <hr />
+
+        </section>
         <section class="testimonials">
             <h2 class="testimonials" style="text-align: center;"><b><i>Testimonials</i></b></h2>
             <div class="container py-6">
@@ -503,8 +515,15 @@
                         </div>
                         <div class="lc-block mb-4">
                             <div editable="rich">
-                                <blockquote class="blockquote">"This is a beautiful page builder with exciting
-                                    components."</blockquote>
+                                <blockquote class="blockquote">"I cannot speak highly enough of
+                                    {{datafile.user.fullName}}'s coding abilities. Their work ethic, technical
+                                    proficiency,
+                                    and commitment to delivering results exceeded our expectations. They consistently
+                                    met
+                                    deadlines and showed exceptional attention to detail. {{datafile.user.fullName}} is
+                                    an
+                                    exceptional coder who brings a level of expertise and professionalism that is truly
+                                    commendable." - David M.</blockquote>
 
                             </div>
                         </div>
@@ -552,7 +571,15 @@
                         </div>
                         <div class="lc-block mb-4">
                             <div editable="rich">
-                                <blockquote class="blockquote">"The best and fast template page I've ever come across."
+                                <blockquote class="blockquote">"I was blown away by {{datafile.user.fullName}}'s coding
+                                    expertise. They
+                                    effortlessly tackled complex challenges and found innovative solutions. Their
+                                    ability to
+                                    understand our requirements and translate them into efficient code was impressive.
+                                    {{datafile.user.fullName}} is a highly skilled and dedicated coder who I would
+                                    gladly
+                                    work with
+                                    again." - Sarah L.
                                 </blockquote>
 
                             </div>
@@ -601,8 +628,15 @@
                         </div>
                         <div class="lc-block mb-4">
                             <div editable="rich">
-                                <blockquote class="blockquote">"There is the theme everyone wants for your website"
-                                </blockquote>
+                                <blockquote class="blockquote">"Working with {{datafile.user.fullName}} was an absolute
+                                    pleasure. Their
+                                    coding skills are exceptional, and they consistently delivered high-quality work.
+                                    Their
+                                    attention to detail, problem-solving abilities, and clean code made our project a
+                                    success. I highly recommend {{datafile.user.fullName}} for anyone in need of a
+                                    talented
+                                    and reliable
+                                    coder." - John D</blockquote>
 
                             </div>
                         </div>
