@@ -1,5 +1,5 @@
 import handlebars from 'vite-plugin-handlebars';
-import datafile from './data.json';
+import datafile from './public/data.json';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
